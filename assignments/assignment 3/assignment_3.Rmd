@@ -1,0 +1,25 @@
+---
+title: "Assignment 3"
+author: "C.L. Jerde"
+date: "2022-11-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+**Due November 11th by midnight**
+
+This lab covers labs 4, 5, and 6 and the R markdown formatting discussed in lecture 12. The data are available on Gauchospace. Only your html file will be uploaded to Gauchospace for grading.
+
+**Presentation (2 pts)** Use your R markdown skills to provide a professional document. Use the **code folding** option for all questions in R markdown and **include captions** for all figures using R markdown.
+
+**Question 1 (1 pt)**. A survey from 1955 documents the population mean length of adult tidewater gobies (*Eucyclogobius newberryi*) as 4.2 cm. In a recent environmental assessment of the San Antonio River (Santa Barbara County) found 10 gobies in the stream. They measured 2.7, 3.2, 3.2, 3.3, 3.5, 3.6, 3.6, 3.7, 4.0, and 4.3 cm in length. The USFWS wants to know if the current population is different from the historical record. Use your knowledge of statistics to inform the USFWS. Justify your approach and report your results and conclusion. No figure is requested, but see the next question.
+
+**Question 2 (1 pt)** Are the tidewater goby lengths in question 1 normally distributed? Provide a figure with caption **or** critical statistical test and justify your results and conclusion.
+
+**Question 3 (3 pts)** Cigarette butt litter is extremely toxic when mixed with water and then exposed to wildlife.  One smoked cigarette butt in a five-gallon bucket of water with rainbow trout for 24 hours is lethal 50% of the time!  Fifteen-minute surveys of cigarette butt litter were conducted on various reserves in the UC Natural Reserve System and at urban open space areas (state and city beaches, state and city parks) using the collection protocol found [here,](https://assets.researchsquare.com/files/pex-1719/v1/e53d6dd8-414f-400b-aad1-779190fe7da7.pdf?c=1642436641). The UC Reserves had cigarette butt counts of  4, 1, 8, 0, 0, 0, 0, 23, 28, 0, 0, 0, 4, 0, 3, 0, 0, 2, 0, 5, 0, 0, 0, 0, 0. In contrast, the urban open space areas had cigarette butt counts of 33, 9, 9, 7, 2, 38, 9, 20, 0, 39, 18, 41, 25, 164, 37, 60, 55, 45, 14, 3, 69, 60, 13, 1.  The UC Tobacco Free Campus Initiative wants to know if the UC reserves have more or less cigarette butt load as urban open spaces. Use your knowledge of statistics to 1. justify the appropriate statistical test to use, 2. explain the results and conclusion of the test you selected, and 3. make a figure with caption to best explain the data and results.  
+
+**Question 4 (3 pts)** For some turtles, the time between a laid egg and hatching is temperature dependent.  You found a new species of turtle and want to determine if there is evidence for temperature dependency on hatching times. You collect one egg from nests across the beach and randomly incubate the eggs at 15, 20, 25 and 30 degrees C. Every day you inspect the eggs and record the number of days until hatching occurs for each egg.  The data are found as Turtles.csv on Gauchospace. Use your knowledge of statistics to 1. justify the appropriate statistical test to use, 2. explain the results and conclusion of the test you selected, and 3. make a figure with a caption to best explain the data, results, and conclusion.  

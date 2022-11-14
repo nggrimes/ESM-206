@@ -1,0 +1,91 @@
+---
+title: "Assignment 3 Key"
+author: "Nathaniel Grimes"
+date: "2022-11-03"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE,results=FALSE)
+
+library(tidyverse)
+library(here)
+```
+
+## Question 1
+
+```{r}
+gobies=c(2.7,3.2,3.2,3.3,3.5,3.6,3.7,4.0,4.3)
+
+shapiro.test(gobies)
+
+gob_t=t.test(gobies,mu=4.2)
+
+gob_t
+```
+
+### Methods
+
+I use a T-test to compare my current goby sample with the historical average.
+
+### Results
+
+Tidewater goby samples from San Antonio River are smaller than the 1955 average. A one way Student's T test reveals a signficant difference between the current mean of 3.51 cm and historical 1955 mean of 4.2 cm(p-value = `r signif(gob_t$p.value,2)`).
+
+## Question 2:
+
+```{r}
+shap<-shapiro.test(gobies)
+```
+
+A Shapiro-Wilk test indicates that the goby sample was pulled from a normal distribution (p-value = `r signif(shap$p.value,2)`)
+
+Note: QQplot is also acceptable
+
+## Question 3
+
+```{r}
+uc_reserve=c(4,1,8,0,0,0,0,23,28,0,0,0,4,0,3,0,0,2,0,5,0,0,0,0)
+
+uc_campus=c(33,9,9,7,2,38,9,20,0,39,18,41,25,164,37,60,55,45,14,3,69,60,13,1)
+
+shapiro.test(uc_campus)
+shapiro.test(uc_reserve)
+
+uc_t=wilcox.test(uc_reserve,uc_campus)
+```
+### Methods
+
+I want to compare differences between the two groups. First I test for normality using a Shapiro-Wilk test on both the counts of cigarette butts from the UC Reserve and Urban Campus. Both datasets are not normally distributed (p-values < 0.05). Thus, I will use a Mann-Whitney U test to differences in medians.
+
+### Results
+
+There is a signficiant difference in median cigarette butt litter between the UC reserves (median = 0) and UC campuses (median=22) (W=57,p-value=`r signif(uc_t$p.value,3)`)
+
+## Question 4
+
+```{r}
+turtles<-read_csv(here("assignments","assignment 3","turtles.csv")) %>% 
+  janitor::clean_names()
+```
+
+
+### Methods
+
+I want to compare means across multiple groups. Therefore, I need to check if the data is suitable for an ANOVA by checking for normality and constant variance. I run a Shaprio-Wilk tests on all temperature groupings. Then I check for variance using a Levene Test. The data is normally distributed across all temperature groups except for the 25 degree group. However, the entire dataset is normally distributed and we can assume we have enough normality to use an ANOVA. Variances between groups are not statistically different preservering homoscedasicity. 
+
+
+```{r}
+turtle_aov=aov(days~as.factor(temperature),data=turtles)
+```
+
+```{r, fig.align='center',fig.cap="Figure 2. Time to hatch for a new species of turtles across four temperature groups. Mean values of each group shown by "}
+ggplot(turtles,aes(x=as.factor(temperature),y=days))+
+  geom_boxplot()+
+  stat_summary(fun="mean",shape=4)+
+  theme_classic()+
+  labs(x="Temperature Groups (C)",y="Incubation Days")
+```
+

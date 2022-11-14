@@ -1,0 +1,43 @@
+---
+title: "Assignment 2 Instructions"
+author: "C.L. Jerde"
+date: "2022-10-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## **Due by midnight October 21st, 2022** 
+
+**This assignment covers lab 3**
+
+## Directions: 
+
+Set up a new .Rproj with an Rmarkdown document. The data are available on Gauchospace as copr_plovers.csv and copr_user_days.csv in the assignment 2 folder. Your .rmd  and .html file must be uploaded to Gauchospace with a2_Last Name_First Name. Some questions require only to provide the code. These are marked as 'Code Only.' Other questions require output only or discussion. Please provide your answer with an 'A:.'
+
+## Question 1: Data import (3 pts) 
+
+Import the two data files (copr_plovers.csv and copr_user_days.csv). Format the files to be tidy data in long format. Show code and provide a description of what you did.  
+
+1. copr_plovers.csv is a data file spanning 2009 to 2020 of the number of observed nests and fledged plovers 
+
+2. copr_user_days.csv is a data file of the registered users of Coal Oil Point Reserve from 2014 to 2020.
+
+
+## Question 2: Join data
+
+### Part A (3 pts) 
+
+Using your long formatted copr_plover data, join the copr_user_days data to it. Show your code and the first 6 lines of the newly formed data file. No description is requested. 
+
+
+### Part B (1pt) 
+
+Why are there so many **NA** in the data file? No code needed.  Provide and answer marked by A:
+
+
+## Question 3: Functions (3pts) 
+
+Create your own function to covert temperature from Fahrenheit to Celsius. Show the code. Use your function to covert 212F, 32F, and 72F to Celsius. Describe if your function works correctly based on the output. Hint: What temperature does water freeze and boil at?
